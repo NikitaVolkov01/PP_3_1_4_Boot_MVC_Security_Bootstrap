@@ -9,8 +9,10 @@
 8) Добавить Bootstrap
 
 Пользователь с ролью 'user' - Username: user , Password: user.
-
+![image](https://github.com/NikitaVolkov01/PP_3_1_4_Boot_MVC_Security_Bootstrap/assets/63566223/e05e45dd-78f1-4048-9705-f61e778dd199)
 Пользователь с ролью 'admin' - Username: admin , Password: admin.
-
+![image](https://github.com/NikitaVolkov01/PP_3_1_4_Boot_MVC_Security_Bootstrap/assets/63566223/b20f50c5-544a-4d1c-84ce-66ba77ea7bba)
+![image](https://github.com/NikitaVolkov01/PP_3_1_4_Boot_MVC_Security_Bootstrap/assets/63566223/34cd3058-4a33-429a-a8ac-4bbea92979b3)
 Пользователь с ролью 'adminuser' - Username: adminuser , Password: adminuser
 ![image](https://github.com/NikitaVolkov01/PP_3_1_4_Boot_MVC_Security_Bootstrap/assets/63566223/0a150f29-9bd3-4534-a80f-61f953954f4e)
+![image](https://github.com/NikitaVolkov01/PP_3_1_4_Boot_MVC_Security_Bootstrap/assets/63566223/dcade7c4-bc47-4d38-9da6-8d50dad1229c)
