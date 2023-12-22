@@ -8,6 +8,8 @@
 7) Настройте LoginSuccessHandler так, чтобы админа после аутентификации направляло на страницу /admin, а юзера на его страницу /user.
 8) Добавить Bootstrap
 
+После запуска приложения перейти по адресу http://localhost:8080/
+
 Пользователь с ролью 'user' - Username: user , Password: user.
 ![image](https://github.com/NikitaVolkov01/PP_3_1_4_Boot_MVC_Security_Bootstrap/assets/63566223/e05e45dd-78f1-4048-9705-f61e778dd199)
 Пользователь с ролью 'admin' - Username: admin , Password: admin.
