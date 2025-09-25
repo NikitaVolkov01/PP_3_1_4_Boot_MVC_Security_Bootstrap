@@ -11,9 +11,17 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 @Configuration
 @EnableWebSecurity
-public class  WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final SuccessUserHandler successUserHandler;
     private final UserDetailsService userDetailsService;
 
@@ -29,7 +37,8 @@ public class  WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http    .formLogin()
+        http
+                .formLogin()
                 .loginPage("/user/login")
                 .successHandler(successUserHandler)
                 .loginProcessingUrl("/login")
@@ -37,9 +46,11 @@ public class  WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordParameter("f_password")
                 .permitAll();
 
-        http    .authorizeRequests()
+        http
+                .authorizeRequests()
+                .antMatchers("/actuator/prometheus").permitAll() // Разрешить доступ к метрикам без аутентификации
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/user/login","/", "/index").permitAll()
+                .antMatchers("/user/login", "/", "/index").permitAll()
                 .anyRequest().hasAnyRole("ADMIN", "USER")
                 .and()
                 .logout()
@@ -50,5 +61,4 @@ public class  WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 }
